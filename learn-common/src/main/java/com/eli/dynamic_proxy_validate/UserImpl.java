@@ -14,4 +14,13 @@ public class UserImpl implements User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void test1() {
+        System.out.println("test1");
+        test2();
+    }
+
+    public void test2() {
+        System.out.println("test2");
+    }
 }

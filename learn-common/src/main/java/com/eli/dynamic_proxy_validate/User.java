@@ -7,4 +7,7 @@ public interface User {
 
     String getName();
     void setName(String name);
+
+    void test1();
+    void test2();
 }

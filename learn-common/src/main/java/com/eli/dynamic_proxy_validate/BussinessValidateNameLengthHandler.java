@@ -16,6 +16,7 @@ public class BussinessValidateNameLengthHandler implements InvocationHandler {
     }
 
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("---开始动态代理---");
 
         this.check(args);
 
@@ -26,8 +27,11 @@ public class BussinessValidateNameLengthHandler implements InvocationHandler {
             /* the method invocation threw an exception, so "unwrap" and
                throw.
             */
+            System.out.println("---异常动态代理---");
             throw ite.getTargetException();
         }
+
+        System.out.println("---结束动态代理---");
 
         return retVal;
     }
