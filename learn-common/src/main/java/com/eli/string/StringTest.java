@@ -9,6 +9,17 @@ import java.util.*;
 public class StringTest {
     public static void main(String[] args) {
 
+        System.out.println(getMonthFromTransId("T20180710004314654209"));
+        System.out.println(getMonthFromTransId("T20181110004314654209"));
+
+
+
+
+        Double doubleV = 223.11;
+        System.out.println(yuan2fen(doubleV));
+        System.out.println(yuan2fen(-2333.11));
+        System.out.println(doubleV.toString().startsWith("-"));
+
         String sss = "12345678哈";
 
         System.out.println(sss.trim().substring(0, 8));
@@ -78,5 +89,17 @@ public class StringTest {
 ////        for (String n : numbers){
 ////            System.out.println(n);
 ////        }
+    }
+
+    public static long yuan2fen(double amount) {
+        return amount % 1.0D == 0.0D?(long)amount * 100L:(long)amount * 100L;
+    }
+
+    private static String getMonthFromTransId(String transId) {
+
+        String monthStr = transId.substring(5, 7);
+
+        // 如果是0开头，去掉0
+        return monthStr.startsWith("0") ? monthStr.substring(1, monthStr.length()) : monthStr;
     }
 }
